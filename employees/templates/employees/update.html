@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Employee</title>
+</head>
+<body>
+    <h1>Update Employee</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="employee_id" value="{{ name.employee_id }}" required><br>
+        <input type="text" name="first_name" value="{{ name.first_name }}" required><br>
+        <input type="text" name="last_name" value="{{ name.last_name }}" required><br>
+        <input type="text" name="emergency_contact" value="{{ name.emergency_contact }}" required><br>
+        <input type="date" name="hire_date" value="{{ name.hire_date }}" required><br>
+
+        <label>
+            <input type="checkbox" name="is_currently_working" {% if name.is_currently_working %}checked{% endif %}>
+            Currently Working
+        </label><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'read_names' %}">Back</a>
+</body>
+</html>
