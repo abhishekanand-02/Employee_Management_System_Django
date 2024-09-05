@@ -39,10 +39,11 @@ def update_name(request, id):
     name = get_object_or_404(Name, id=id)
     
     if request.method == 'POST':
-        name.role=request.POST['role']
+        # name.role=request.POST['role']
         name.employee_id = request.POST['employee_id']
         name.first_name = request.POST['first_name']
         name.last_name = request.POST['last_name']
+        name.role = request.POST.get('role', name.role)
         name.emergency_contact = request.POST['emergency_contact']
         name.hire_date = request.POST['hire_date']
         name.is_currently_working = request.POST.get('is_currently_working', 'off') == 'on'
