@@ -13,19 +13,21 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+%b&&_3cdf#3m%)4^$h_=pkjs^%(5pt3x@2x(m=ff+(n=&ee3f'
+# SECRET_KEY = 'django-insecure-+%b&&_3cdf#3m%)4^$h_=pkjs^%(5pt3x@2x(m=ff+(n=&ee3f'
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')  # Use an environment variable for security
+DEBUG = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ['your-vercel-app-url.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['https://employee-management-system-django.vercel.app/', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'employees',
+    # 'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
