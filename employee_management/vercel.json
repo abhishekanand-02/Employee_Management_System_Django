@@ -5,9 +5,9 @@
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
     }],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "employee_management/wsgi.py"
-        }
+    {
+        "src": "/(.*)",
+        "dest": "employee_management/wsgi.py"
+    }
     ]
 }
