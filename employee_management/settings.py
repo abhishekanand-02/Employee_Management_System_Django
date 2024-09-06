@@ -5,7 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
-SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')  # Use an environment variable for security
+SECRET_KEY = os.environ.get('SECRET_KEY', '88)%8fx_+gtfq^90k+v99*5tco-i6+zv-8ow)x@lyb2ad)t3es')  # Use an environment variable for security
 DEBUG = False  # Set to False for production
 
 ALLOWED_HOSTS = ['employee-management-system-django.vercel.app', 'localhost', '127.0.0.1']
